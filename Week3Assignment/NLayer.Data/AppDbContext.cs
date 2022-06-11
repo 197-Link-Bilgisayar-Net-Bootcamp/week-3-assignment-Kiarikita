@@ -17,11 +17,13 @@ namespace NLayer.Data
 
         public DbSet<ProductFeature> ProductFeatures { get; set; }
 
+        public DbSet<ProductFullModel> ProductFullModels { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //fluent api
             //modelBuilder.Entity<Product>().Property(x => x.Stock).HasColumnName("Category");
-
+            modelBuilder.Entity<ProductFullModel>().HasNoKey();
             base.OnModelCreating(modelBuilder);
         }
     }

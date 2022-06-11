@@ -2,7 +2,7 @@
 
 namespace NLayer.Service.Models
 {
-    internal class Response<T>
+    public class Response<T>
     {
         public T Data { get; set; }
 

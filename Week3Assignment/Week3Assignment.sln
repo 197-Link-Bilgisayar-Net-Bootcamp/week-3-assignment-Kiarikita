@@ -3,11 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32519.379
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayer.API", "NLayer.API\NLayer.API.csproj", "{E40CBD82-AB8F-4168-87E2-D108FFCABF56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLayer.API", "NLayer.API\NLayer.API.csproj", "{E40CBD82-AB8F-4168-87E2-D108FFCABF56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayer.Data", "NLayer.Data\NLayer.Data.csproj", "{2CFFB81F-C115-4600-90B1-6F48A3C8F677}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLayer.Data", "NLayer.Data\NLayer.Data.csproj", "{2CFFB81F-C115-4600-90B1-6F48A3C8F677}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayer.Service", "NLayer.Service\NLayer.Service.csproj", "{229885F4-5007-450C-A1FB-145A5DD4A2BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLayer.Service", "NLayer.Service\NLayer.Service.csproj", "{229885F4-5007-450C-A1FB-145A5DD4A2BC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DDL_DML", "DDL_DML", "{533A8384-E5C4-49DC-8482-836D4B53F0A9}"
+	ProjectSection(SolutionItems) = preProject
+		DDLandDML.txt = DDLandDML.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

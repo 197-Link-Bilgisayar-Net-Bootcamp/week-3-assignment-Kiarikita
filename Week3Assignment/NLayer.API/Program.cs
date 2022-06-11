@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using NLayer.Data;
+using NLayer.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,11 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+//request, response dönüþünceye kaadr tek bir nesne örneði üretecek
+builder.Services.AddScoped<UnitOfWork>();
+//dynamic olanlara typeof ekle
+builder.Services.AddScoped(typeof(GenericRepository<>));
+builder.Services.AddScoped<ProductService>();
 
 builder.Services.AddDbContext<AppDbContext>(options => 
 {

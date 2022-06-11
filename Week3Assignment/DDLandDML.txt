@@ -1,0 +1,40 @@
+CREATE TABLE [Categories] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_Categories] PRIMARY KEY ([Id])
+);
+
+CREATE TABLE [Products] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(max) NOT NULL,
+    [Price] decimal(18,2) NOT NULL,
+    [CategoryId] int NOT NULL,
+    CONSTRAINT [PK_Products] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Products_Categories_CategoryId] FOREIGN KEY ([CategoryId]) REFERENCES [Categories] ([Id]) ON DELETE CASCADE
+);
+
+CREATE TABLE [ProductFeatures] (
+    [Id] int NOT NULL,
+    [Width] int NOT NULL,
+    [Height] int NOT NULL,
+    CONSTRAINT [PK_ProductFeatures] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_ProductFeatures_Products_Id] FOREIGN KEY ([Id]) REFERENCES [Products] ([Id]) ON DELETE CASCADE
+);
+
+CREATE PROCEDURE sp_full_products
+	
+AS
+BEGIN
+	select p.Id, c.Name 'CategoryName', p.Name, p.Price, pf.Width, pf.Height from Products p
+	join Categories c on p.CategoryId=c.Id
+	join ProductFeatures pf on pf.Id=p.Id
+END
+
+alter PROCEDURE sp_full_products
+	
+AS
+BEGIN
+	select c.Name 'CategoryName', p.Name, p.Price, pf.Width, pf.Height from Products p
+	join Categories c on p.CategoryId=c.Id
+	join ProductFeatures pf on pf.Id=p.Id
+END
